@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-canvas: #fafafa;
+  --color-surface: #ffffff;
+  --color-border: #e8e7ea;
+  --color-border-strong: #d8d7db;
+
+  --color-ink: #18181b;
+  --color-ink-soft: #52525b;
+  --color-ink-faint: #9c9ca3;
+
+  --color-accent: #6d5efc;
+  --color-accent-hover: #5c4de8;
+  --color-accent-soft: #f0eeff;
+
+  --color-success: #12946f;
+  --color-success-soft: #e7f7f1;
+  --color-danger: #d6483f;
+  --color-danger-soft: #fcebe9;
+  --color-warning: #b7791f;
+  --color-warning-soft: #fdf3e2;
+
+  --radius-card: 14px;
+  --radius-control: 10px;
+
+  --shadow-subtle: 0 1px 2px rgba(24, 24, 27, 0.04), 0 1px 1px rgba(24, 24, 27, 0.03);
+  --shadow-card: 0 1px 3px rgba(24, 24, 27, 0.06), 0 6px 20px -8px rgba(24, 24, 27, 0.08);
+  --shadow-popover: 0 12px 32px -8px rgba(24, 24, 27, 0.18), 0 4px 12px -4px rgba(24, 24, 27, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-canvas: #101012;
+    --color-surface: #18181b;
+    --color-border: #2a2a2e;
+    --color-border-strong: #38383e;
+
+    --color-ink: #f4f4f5;
+    --color-ink-soft: #b4b4ba;
+    --color-ink-faint: #717179;
+
+    --color-accent: #8b7dff;
+    --color-accent-hover: #a094ff;
+    --color-accent-soft: #241f47;
+
+    --color-success: #2fd39a;
+    --color-success-soft: #103228;
+    --color-danger: #f0685f;
+    --color-danger-soft: #3a1c1a;
+    --color-warning: #e0a94a;
+    --color-warning-soft: #3a2c12;
+
+    --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+    --shadow-popover: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
